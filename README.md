@@ -1,6 +1,6 @@
 
 # Introduction
-📊 Plongez dans le marché des emplois liés aux données ! En mettant l'accent sur les rôles d'analyste de données, ce projet explore 💰 les emplois les mieux rémunérés, 🔥 les compétences les plus demandées et 📈 là où une forte demande rencontre des salaires élevés dans l'analyse de données.
+📊 Plongez dans le marché des emplois liés aux données ! En mettant l'accent sur les rôles d'analyste de données, ce projet explore les emplois les mieux rémunérés, les compétences les plus demandées et là où une forte demande rencontre des salaires élevés dans l'analyse de données.
 
 🔍 Requêtes SQL ? Découvrez-les ici : [Dossier SQL du projet](/project_sql/)
 
