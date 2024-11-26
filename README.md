@@ -102,8 +102,3 @@ Les compétences les plus demandées pour les postes les mieux rémunérés sont
 - **Agrégation de données** : Maîtrise des fonctions comme `COUNT()` et `AVG()`.
 - **Compétences analytiques** : Résolution de problèmes réels grâce à SQL.
 
-# Conclusions
-- **Emplois bien payés** : Les salaires pour les analystes de données à distance peuvent atteindre 650 000 $ !
-- **Compétences essentielles** : SQL reste une compétence clé.
-- **Évolution des tendances** : Les compétences techniques comme Python et Tableau sont de plus en plus valorisées.
-
