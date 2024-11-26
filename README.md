@@ -229,7 +229,7 @@ Tout au long de cette aventure, j'ai considérablement renforcé mon arsenal SQL
 # Conclusions
 
 ### Insights
-From the analysis, several general insights emerged:
+De l'analyse, plusieurs conclusions générales ont émergé:
 
 1. **Emplois d'Analyste de Données les Mieux Rémunérés**: Les emplois les mieux rémunérés pour les analystes de données permettant le travail à distance offrent une large gamme de salaires, le plus élevé étant de 650 000 $ !
 2. **Compétences pour les Emplois Bien Rémunérés**: Les emplois d'analyste de données bien rémunérés nécessitent une maîtrise avancée de SQL, ce qui suggère que c'est une compétence essentielle pour obtenir un salaire élevé.
