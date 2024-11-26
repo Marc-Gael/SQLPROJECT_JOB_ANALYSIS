@@ -1,34 +1,35 @@
 # Introduction
-📊 Dive into the data job market! Focusing on data analyst roles, this project explores 💰 top-paying jobs, 🔥 in-demand skills, and 📈 where high demand meets high salary in data analytics.
+📊 Plongez dans le marché des emplois liés aux données ! En vous concentrant sur les rôles d'analyste de données, ce projet explore 💰 les emplois les mieux rémunérés, 🔥 les compétences les plus demandées et 📈 où une forte demande rencontre des salaires élevés dans l'analyse des données.
 
-🔍 SQL queries? Check them out here: [project_sql folder](/project_sql/)
+🔍 Requêtes SQL ? Consultez-les ici : [project_sql folder](/project_sql/)
 
-# Background
-Driven by a quest to navigate the data analyst job market more effectively, this project was born from a desire to pinpoint top-paid and in-demand skills, streamlining others work to find optimal jobs.
+# Contexte
+Animé par une quête pour naviguer plus efficacement sur le marché des emplois d'analyste de données, ce projet est né du désir d'identifier les compétences les mieux rémunérées et les plus demandées, simplifiant ainsi le travail des autres pour trouver des emplois optimaux.
 
-Data hails from my [SQL Course](https://lukebarousse.com/sql). It's packed with insights on job titles, salaries, locations, and essential skills.
+Les données proviennent de mon [SQL Course](https://lukebarousse.com/sql). Elles contiennent des informations sur les intitulés de postes, les salaires, les lieux et les compétences essentielles.
 
-### The questions I wanted to answer through my SQL queries were:
+### Les questions auxquelles je voulais répondre grâce à mes requêtes SQL :
 
-1. What are the top-paying data analyst jobs?
-2. What skills are required for these top-paying jobs?
-3. What skills are most in demand for data analysts?
-4. Which skills are associated with higher salaries?
-5. What are the most optimal skills to learn?
+1. Quels sont les emplois d'analyste de données les mieux rémunérés ?
+2. Quelles compétences sont requises pour ces emplois bien rémunérés ?
+3. Quelles compétences sont les plus demandées pour les analystes de données ?
+4. Quelles compétences sont associées à des salaires plus élevés ?
+5. Quelles sont les compétences les plus optimales à apprendre ?
 
-# Tools I Used
-For my deep dive into the data analyst job market, I harnessed the power of several key tools:
+# Outils Utilisés
+Pour ma plongée dans le marché des emplois d'analyste de données, j'ai utilisé plusieurs outils clés :
 
-- **SQL:** The backbone of my analysis, allowing me to query the database and unearth critical insights.
-- **PostgreSQL:** The chosen database management system, ideal for handling the job posting data.
-- **Visual Studio Code:** My go-to for database management and executing SQL queries.
-- **Git & GitHub:** Essential for version control and sharing my SQL scripts and analysis, ensuring collaboration and project tracking.
+- **SQL** : L'élément central de mon analyse, me permettant d'interroger la base de données et de découvrir des informations critiques.
+- **PostgreSQL** : Le système de gestion de base de données choisi, idéal pour traiter les données des offres d'emploi.
+- **Visual Studio Code** : Mon outil préféré pour la gestion des bases de données et l'exécution des requêtes SQL.
+- **Git & GitHub** : Essentiels pour le contrôle des versions et le partage de mes scripts SQL et analyses, permettant la collaboration et le suivi du projet.
 
-# The Analysis
-Each query for this project aimed at investigating specific aspects of the data analyst job market. Here’s how I approached each question:
+# L'Analyse
+Chaque requête de ce projet visait à explorer des aspects spécifiques du marché des emplois d'analyste de données. Voici comment j'ai abordé chaque question :
 
-### 1. Top Paying Data Analyst Jobs
-To identify the highest-paying roles, I filtered data analyst positions by average yearly salary and location, focusing on remote jobs. This query highlights the high paying opportunities in the field.
+### 1. Emplois d'Analyste de Données les Mieux Rémunérés
+Pour identifier les rôles les mieux rémunérés, j'ai filtré les postes d'analyste de données par salaire annuel moyen et localisation, en me concentrant sur les emplois à distance. Cette requête met en évidence les opportunités les mieux rémunérées dans le domaine.
+
 
 ```sql
 SELECT	
@@ -50,16 +51,16 @@ ORDER BY
     salary_year_avg DESC
 LIMIT 10;
 ```
-Here's the breakdown of the top data analyst jobs in 2023:
-- **Wide Salary Range:** Top 10 paying data analyst roles span from $184,000 to $650,000, indicating significant salary potential in the field.
-- **Diverse Employers:** Companies like SmartAsset, Meta, and AT&T are among those offering high salaries, showing a broad interest across different industries.
-- **Job Title Variety:** There's a high diversity in job titles, from Data Analyst to Director of Analytics, reflecting varied roles and specializations within data analytics.
+Voici les résultats des emplois d'analyste de données en 2023:
+- **Large plage salariale:** Les 10 postes les mieux rémunérés varient entre 184 000 $ et 650 000 $, montrant un potentiel salarial important.
+- **Employeurs diversifiés:** Des entreprises comme SmartAsset, Meta et AT&T figurent parmi celles offrant les meilleurs salaires, démontrant un intérêt à travers différents secteurs.
+- **Variété des intitulés de poste:** Une grande diversité d'intitulés de postes, allant d'analyste de données à directeur de l'analyse, reflète des rôles variés et des spécialisations dans l'analyse de données.
 
 ![Top Paying Roles](assets/1_top_paying_roles.png)
-*Bar graph visualizing the salary for the top 10 salaries for data analysts; ChatGPT generated this graph from my SQL query results*
+*Graphique représentant les salaires des 10 emplois les mieux rémunérés pour les analystes de données ; généré à partir des résultats de mes requêtes SQL.*
 
-### 2. Skills for Top Paying Jobs
-To understand what skills are required for the top-paying jobs, I joined the job postings with the skills data, providing insights into what employers value for high-compensation roles.
+### 2. Compétences pour les Emplois Bien Rémunérés
+Pour comprendre quelles compétences sont nécessaires pour les postes les mieux rémunérés, j'ai relié les offres d'emploi aux données sur les compétences, fournissant des informations sur ce que les employeurs valorisent pour les rôles à forte rémunération.
 ```sql
 WITH top_paying_jobs AS (
     SELECT	
@@ -88,18 +89,17 @@ INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 ORDER BY
     salary_year_avg DESC;
 ```
-Here's the breakdown of the most demanded skills for the top 10 highest paying data analyst jobs in 2023:
-- **SQL** is leading with a bold count of 8.
-- **Python** follows closely with a bold count of 7.
-- **Tableau** is also highly sought after, with a bold count of 6.
-Other skills like **R**, **Snowflake**, **Pandas**, and **Excel** show varying degrees of demand.
+Voici les compétences les plus demandées pour les 10 emplois d'analyste de données les mieux rémunérés en 2023:
+- **SQL** est en tête avec une forte occurrence.
+- **Python** suit de près.
+- **Tableau** est également très recherché. D'autres compétences comme **R**, **Snowflake**, **Pandas**, et **Excel** montrent divers degrés de demande.
 
 ![Top Paying Skills](assets/2_top_paying_roles_skills.png)
-*Bar graph visualizing the count of skills for the top 10 paying jobs for data analysts; ChatGPT generated this graph from my SQL query results*
+*Graphique à barres visualisant le nombre de compétences pour les 10 emplois les mieux rémunérés pour les analystes de données ; ChatGPT a généré ce graphique à partir des résultats de ma requête SQL.*
 
-### 3. In-Demand Skills for Data Analysts
+### 3. Compétences les Plus Demandées pour les Analystes de Données
 
-This query helped identify the skills most frequently requested in job postings, directing focus to areas with high demand.
+Cette requête a permis d’identifier les compétences les plus fréquemment demandées dans les offres d'emploi, en mettant l'accent sur les domaines où la demande est élevée.
 
 ```sql
 SELECT 
@@ -117,9 +117,9 @@ ORDER BY
     demand_count DESC
 LIMIT 5;
 ```
-Here's the breakdown of the most demanded skills for data analysts in 2023
-- **SQL** and **Excel** remain fundamental, emphasizing the need for strong foundational skills in data processing and spreadsheet manipulation.
-- **Programming** and **Visualization Tools** like **Python**, **Tableau**, and **Power BI** are essential, pointing towards the increasing importance of technical skills in data storytelling and decision support.
+Voici les compétences les plus demandées pour les analystes de données en 2023 :
+- **SQL** et **Excel** restent des compétences fondamentales, soulignant l’importance de solides bases dans le traitement des données et la manipulation de feuilles de calcul.
+- Les outils de **Programmation** et de **Visualizsation** comme **Python**, **Tableau**, et **Power BI** sont essentiels, ce qui reflète l'importance croissante des compétences techniques pour la narration de données et l'aide à la décision.
 
 | Skills   | Demand Count |
 |----------|--------------|
@@ -129,10 +129,10 @@ Here's the breakdown of the most demanded skills for data analysts in 2023
 | Tableau  | 3745         |
 | Power BI | 2609         |
 
-*Table of the demand for the top 5 skills in data analyst job postings*
+*Tableau des compétences les plus demandées dans les offres d’emploi pour les analystes de données.*
 
-### 4. Skills Based on Salary
-Exploring the average salaries associated with different skills revealed which skills are the highest paying.
+### 4. Compétences Basées sur le Salaire
+L'exploration des salaires moyens associés à différentes compétences a permis d'identifier celles qui offrent les meilleurs revenus.
 ```sql
 SELECT 
     skills,
@@ -150,10 +150,10 @@ ORDER BY
     avg_salary DESC
 LIMIT 25;
 ```
-Here's a breakdown of the results for top paying skills for Data Analysts:
-- **High Demand for Big Data & ML Skills:** Top salaries are commanded by analysts skilled in big data technologies (PySpark, Couchbase), machine learning tools (DataRobot, Jupyter), and Python libraries (Pandas, NumPy), reflecting the industry's high valuation of data processing and predictive modeling capabilities.
-- **Software Development & Deployment Proficiency:** Knowledge in development and deployment tools (GitLab, Kubernetes, Airflow) indicates a lucrative crossover between data analysis and engineering, with a premium on skills that facilitate automation and efficient data pipeline management.
-- **Cloud Computing Expertise:** Familiarity with cloud and data engineering tools (Elasticsearch, Databricks, GCP) underscores the growing importance of cloud-based analytics environments, suggesting that cloud proficiency significantly boosts earning potential in data analytics.
+Voici une synthèse des compétences les mieux rémunérées pour les analystes de données:
+- **Grande demande pour les compétences Big Data et Machine Learning:** Les meilleurs salaires sont associés à des compétences en technologies Big Data (PySpark, Couchbase), outils de machine learning (DataRobot, Jupyter) et bibliothèques Python (Pandas, NumPy), ce qui reflète une valorisation élevée des capacités de traitement des données et de modélisation prédictive.
+- **Maîtrise du développement et du déploiement logiciel:**  La connaissance des outils de développement et de déploiement (GitLab, Kubernetes, Airflow) ouvre des passerelles lucratives entre l'analyse de données et l'ingénierie.
+- **Expertise en informatique dématérialisée:** La maîtrise des outils de cloud computing et d'ingénierie des données (Elasticsearch, Databricks, GCP) est un atout majeur, renforçant la pertinence des environnements analytiques dans le cloud.
 
 | Skills        | Average Salary ($) |
 |---------------|-------------------:|
@@ -168,11 +168,11 @@ Here's a breakdown of the results for top paying skills for Data Analysts:
 | pandas        |            151,821 |
 | elasticsearch |            145,000 |
 
-*Table of the average salary for the top 10 paying skills for data analysts*
+*Tableau des compétences les mieux rémunérées pour les analystes de données.*
 
-### 5. Most Optimal Skills to Learn
+### 5. Compétences les Plus Optimales à Apprendre
 
-Combining insights from demand and salary data, this query aimed to pinpoint skills that are both in high demand and have high salaries, offering a strategic focus for skill development.
+En combinant les données sur la demande et les salaires, cette requête a permis d’identifier les compétences à la fois en forte demande et bien rémunérées, offrant un point focal stratégique pour le développement des compétences.
 
 ```sql
 SELECT 
@@ -188,7 +188,7 @@ WHERE
     AND salary_year_avg IS NOT NULL
     AND job_work_from_home = True 
 GROUP BY
-    skills_dim.skill_id
+    skills_dim.skill_idKnowledge
 HAVING
     COUNT(skills_job_dim.job_id) > 10
 ORDER BY
@@ -210,33 +210,29 @@ LIMIT 25;
 | 194      | ssis       | 12           |            106,683 |
 | 233      | jira       | 20           |            104,918 |
 
-*Table of the most optimal skills for data analyst sorted by salary*
+*Tableau des compétences les plus optimales pour un analyste de données triées par salaire*
 
-Here's a breakdown of the most optimal skills for Data Analysts in 2023: 
-- **High-Demand Programming Languages:** Python and R stand out for their high demand, with demand counts of 236 and 148 respectively. Despite their high demand, their average salaries are around $101,397 for Python and $100,499 for R, indicating that proficiency in these languages is highly valued but also widely available.
-- **Cloud Tools and Technologies:** Skills in specialized technologies such as Snowflake, Azure, AWS, and BigQuery show significant demand with relatively high average salaries, pointing towards the growing importance of cloud platforms and big data technologies in data analysis.
-- **Business Intelligence and Visualization Tools:** Tableau and Looker, with demand counts of 230 and 49 respectively, and average salaries around $99,288 and $103,795, highlight the critical role of data visualization and business intelligence in deriving actionable insights from data.
-- **Database Technologies:** The demand for skills in traditional and NoSQL databases (Oracle, SQL Server, NoSQL) with average salaries ranging from $97,786 to $104,534, reflects the enduring need for data storage, retrieval, and management expertise.
+Voici une répartition des compétences les plus optimales pour les analystes de données en 2023: 
+- **Langages de programmation à forte demande:** Python et R se démarquent par leur forte demande, avec un nombre de demandes respectif de 236 et 148. Malgré cette forte demande, leurs salaires moyens sont d'environ 101 397 $ pour Python et 100 499 $ pour R, ce qui indique que la maîtrise de ces langages est très valorisée mais également largement répandue.
+- **Outils et technologies cloud:** Les compétences dans des technologies spécialisées telles que Snowflake, Azure, AWS et BigQuery affichent une demande significative avec des salaires moyens relativement élevés, soulignant l'importance croissante des plateformes cloud et des technologies Big Data dans l'analyse de données.
+- **Outils de Business Intelligence et de Visualisation:** Tableau et Looker, avec des nombres de demandes respectifs de 230 et 49, et des salaires moyens autour de 99 288 $ et 103 795 $, soulignent le rôle essentiel de la visualisation des données et de la business intelligence dans l'extraction d'insights actionnables à partir des données.
+- **Technologies de bases de données:** La demande de compétences dans les bases de données traditionnelles et NoSQL (Oracle, SQL Server, NoSQL), avec des salaires moyens allant de 97 786 $ à 104 534 $, reflète le besoin constant d'expertise en stockage, récupération et gestion des données.
 
-# What I Learned
+# Ce que j'ai appris
 
-Throughout this adventure, I've turbocharged my SQL toolkit with some serious firepower:
+Tout au long de cette aventure, j'ai considérablement renforcé mon arsenal SQL avec des outils puissants:
 
-- **🧩 Complex Query Crafting:** Mastered the art of advanced SQL, merging tables like a pro and wielding WITH clauses for ninja-level temp table maneuvers.
-- **📊 Data Aggregation:** Got cozy with GROUP BY and turned aggregate functions like COUNT() and AVG() into my data-summarizing sidekicks.
-- **💡 Analytical Wizardry:** Leveled up my real-world puzzle-solving skills, turning questions into actionable, insightful SQL queries.
+- **🧩 Création de requêtes complexes:** J'ai maîtrisé l'art du SQL avancé, fusionnant les tables comme un expert et utilisant les clauses WITH pour des manœuvres de tables temporaires de niveau ninja.
+- **📊 Agrégation de données:** Je me suis familiarisé avec le GROUP BY et j'ai transformé des fonctions d'agrégation comme COUNT() et AVG() en mes alliées pour résumer les données.
+- **💡 Magie analytique:** J'ai amélioré mes compétences en résolution de problèmes concrets, transformant des questions en requêtes SQL actionnables et perspicaces.
 
 # Conclusions
 
 ### Insights
 From the analysis, several general insights emerged:
 
-1. **Top-Paying Data Analyst Jobs**: The highest-paying jobs for data analysts that allow remote work offer a wide range of salaries, the highest at $650,000!
-2. **Skills for Top-Paying Jobs**: High-paying data analyst jobs require advanced proficiency in SQL, suggesting it’s a critical skill for earning a top salary.
-3. **Most In-Demand Skills**: SQL is also the most demanded skill in the data analyst job market, thus making it essential for job seekers.
-4. **Skills with Higher Salaries**: Specialized skills, such as SVN and Solidity, are associated with the highest average salaries, indicating a premium on niche expertise.
-5. **Optimal Skills for Job Market Value**: SQL leads in demand and offers for a high average salary, positioning it as one of the most optimal skills for data analysts to learn to maximize their market value.
-
-### Closing Thoughts
-
-This project enhanced my SQL skills and provided valuable insights into the data analyst job market. The findings from the analysis serve as a guide to prioritizing skill development and job search efforts. Aspiring data analysts can better position themselves in a competitive job market by focusing on high-demand, high-salary skills. This exploration highlights the importance of continuous learning and adaptation to emerging trends in the field of data analytics.
+1. **Emplois d'Analyste de Données les Mieux Rémunérés**: Les emplois les mieux rémunérés pour les analystes de données permettant le travail à distance offrent une large gamme de salaires, le plus élevé étant de 650 000 $ !
+2. **Compétences pour les Emplois Bien Rémunérés**: Les emplois d'analyste de données bien rémunérés nécessitent une maîtrise avancée de SQL, ce qui suggère que c'est une compétence essentielle pour obtenir un salaire élevé.
+3. **Compétences les Plus Demandées**: SQL est également la compétence la plus demandée sur le marché des emplois d'analyste de données, ce qui en fait une compétence essentielle pour les chercheurs d'emploi.
+4. **Compétences avec des Salaires Plus Élevés**: Les compétences spécialisées, telles que SVN et Solidity, sont associées aux salaires moyens les plus élevés, ce qui indique une valorisation accrue de l'expertise de niche.
+5. **Compétences Optimales pour la Valeur sur le Marché du Travail**: SQL domine en termes de demande et d'offres pour un salaire moyen élevé, le positionnant comme l'une des compétences les plus optimales à apprendre pour les analystes de données afin de maximiser leur valeur sur le marché.
