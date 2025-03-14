@@ -20,7 +20,6 @@ Les données proviennent de mon [SQL Course](https://lukebarousse.com/sql). Elle
 Pour ma plongée dans le marché des emplois d'analyste de données, j'ai utilisé plusieurs outils clés :
 
 - **SQL** : L'élément central de mon analyse, me permettant d'interroger la base de données et de découvrir des informations critiques.
-- **PostgreSQL** : Le système de gestion de base de données choisi, idéal pour traiter les données des offres d'emploi.
 - **Visual Studio Code** : Mon outil préféré pour la gestion des bases de données et l'exécution des requêtes SQL.
 - **Git & GitHub** : Essentiels pour le contrôle des versions et le partage de mes scripts SQL et analyses, permettant la collaboration et le suivi du projet.
 
